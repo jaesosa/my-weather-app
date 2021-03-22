@@ -5,8 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/d32022cc33.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="float-left">
+            <h1>
+                <em>New York</em>
+            </h1>
+            <h2>
+                Current Date & Time
+            </h2>
+            <section>
+                <div class="temperature-today">
+                    <h3><span id="temperature">11</span>°
+                    </h3>
+                </div>
+        </div>
+        <ul>
+            <li>
+                Feels Like: 20°
+            </li>
+            <li>
+                Humidity: 57%
+            </li>
+        </ul>
+        </section>
+        <div class="float-right">
+            <form id="search-form">
+                <input type="text" id="search-text-input" placeholder="Enter your city" />
+                <input type="submit" id="confirm" value="Search" />
+            </form>
+        </div>
+        <button type="button" class="btn btn-light">Current Location</button>
+        <footer>
+            <hr />
+            <div class="row row-cols-1 row-cols-md-5 g-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>Monday</h5>
+                            <p class="card-text">
+                                <i class="fas fa-sun"></i>
+                                <br>
+                                59</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>Tuesday</h5>
+                            <p class="card-text">
+                                <i class="fas fa-cloud-sun"></i>
+                                <br>
+                                46
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>Wednesday</h5>
+                            <p class="card-text">
+                                <i class="fas fa-wind"></i>
+                                <br>
+                                50
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>Thursday</h5>
+                            <p class="card-text">
+                                <i class="fas fa-sun"></i>
+                                <br>
+                                46
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>Friday</h5>
+                            <p class="card-text">
+                                <i class="far fa-snowflake"></i>
+                                <br>
+                                37
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div id="app"></div>
+    </footer>
+    <script src="src/script.js"></script>
 </body>
 </html>
