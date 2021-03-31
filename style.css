@@ -3,16 +3,16 @@
   border: 1px solid #3e5f91;
   border-radius: 20px;
   color: #445461;
-  margin: 60px 60px 0 60px;
+  display: block;
+  margin: 60px auto;
   max-width: 800px;
-  padding: 40px;
-  padding-bottom: 40px;
+  padding: 40px 40px 10px 40px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 h1 {
   color: #445461;
-  font-size: 50px;
+  font-size: 60px;
 }
 
 h2 {
@@ -22,23 +22,23 @@ h2 {
 
 h3 {
   color: #445461;
-  font-size: 50px;
+  font-size: 100px;
+  text-align: center;
 }
 
-li {
+ul {
   display: block;
-  list-style: none;
   margin: 0 auto;
+}
+li {
+  list-style: none;
+  text-align: left;
 }
 
 i {
   font-size: 80px;
   color: #325c93;
   opacity: 60%;
-}
-
-#temperature {
-  font-size: 100px;
 }
 
 #celsius {
@@ -51,6 +51,7 @@ i {
 
 #search-text-input {
   border-radius: 5px;
+  border-color: #fff;
   display: block;
   font-size: 18px;
   margin: 20px auto;
@@ -58,10 +59,19 @@ i {
 }
 
 .btn-secondary {
+  box-sizing: border-box;
   display: block;
   font-size: 20px;
   margin: 20px auto;
   padding: 10px auto;
+}
+
+.btn-light {
+  background-color: #3e5f91;
+  color: #fff;
+  display: block;
+  margin: 15px auto;
+  padding: 10px 60px 10px 60px;
 }
 
 .card-title {
