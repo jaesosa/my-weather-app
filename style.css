@@ -26,11 +26,11 @@ h3 {
 }
 
 #celsius {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #fahrenheit {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 section {
@@ -46,11 +46,12 @@ footer {
 }
 
 ul {
-  margin: 0 0 0 10px;
+  margin: 0 0 0 30px;
 }
 
 li {
   list-style: none;
+  margin: 0 0 0 30px;
 }
 
 #search-text-input {
