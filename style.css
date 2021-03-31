@@ -46,8 +46,11 @@ footer {
 }
 
 ul {
-  list-style: none;
   display: inline-block;
+}
+
+li {
+  list-style: none;
 }
 
 #search-text-input {
