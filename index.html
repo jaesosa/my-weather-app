@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>🌡 Weather App</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
@@ -14,41 +14,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="float-left">
+    <div class="container"> 
+         <form> 
+             <div class="row"> 
+            <div class="col-9"> 
+             <input type="search" id="search-text-input" placeholder="Enter your city. . ." />
+            </div>
+            <div class="col-3">
+                 <button type="submit" class="btn btn-secondary" value="Search">Search</button>
+            </div>
+            </div>
+        </form>
+            <div class="CurrentWeather">
+                <div class="row">
+                <div class="col-6">
             <h1>
                 <em>New York</em>
             </h1>
             <h2>
                 Current Date & Time
-            </h2>
-            <section>
-                <div class="temperature-today">
-                    <h3><span id="temperature">11</span>°
-                    <small>
-                        <a href="#" id="celsius">C</a> / <a href="#" id="fahrenheit">F</a>
-                    </small>
-                </h3>
-                </div>
-        </div>
-        <ul>
-            <li> 
-                Precipitation: <span id="precipitation">10%</span>
-                </li>
-            <li>
+            </h2>      
+            <ul>
+                <li>
                 Feels Like: <span id="feels-like">20°</span> 
                 </li>
             <li>
                 Humidity: <span id="humidity">57%</span> 
             </li>
         </ul>
-        </section>
-        <div class="float-right">
-            <form id="search-form">
-                <input type="text" id="search-text-input" placeholder="Enter your city" />
-                <input type="submit" id="confirm" value="Search" />
-            </form>
         </div>
+                <div class="col-6">
+                <div class="temperature-today">
+                    <h3><span id="temperature">11</span>°
+                    <small>
+                        <a href="#" id="celsius">C</a>|<a href="#" id="fahrenheit">F</a>
+                    </small>
+                </h3>
+                </div>
+                </div> 
+                </div>
+            </div>
         <button type="button" class="btn btn-light">Current Location</button>
         <footer>
             <hr />
@@ -56,7 +61,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><strong>Monday</h5>
+                            <h5 class="card-title"><strong>Mon</h5>
                             <p class="card-text">
                                 <i class="fas fa-sun"></i>
                                 <br>
@@ -68,7 +73,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><strong>Tuesday</h5>
+                            <h5 class="card-title"><strong>Tue</h5>
                             <p class="card-text">
                                 <i class="fas fa-cloud-sun"></i>
                                 <br>
@@ -81,7 +86,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><strong>Wednesday</h5>
+                            <h5 class="card-title"><strong>Wed</h5>
                             <p class="card-text">
                                 <i class="fas fa-wind"></i>
                                 <br>
@@ -94,7 +99,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><strong>Thursday</h5>
+                            <h5 class="card-title"><strong>Thu</h5>
                             <p class="card-text">
                                 <i class="fas fa-sun"></i>
                                 <br>
@@ -107,7 +112,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><strong>Friday</h5>
+                            <h5 class="card-title"><strong>Fri</h5>
                             <p class="card-text">
                                 <i class="far fa-snowflake"></i>
                                 <br>
@@ -122,6 +127,7 @@
     <div id="app"></div>
 <div class="credit">
     <a href="https://github.com/jaesosa/my-weather-app">Open-sourced</a> by jae/sosa
+</div>
 </div>    
 </footer>
     <script src="src/script.js"></script>
