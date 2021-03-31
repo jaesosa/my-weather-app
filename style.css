@@ -45,10 +45,6 @@ footer {
   clear: both;
 }
 
-ul {
-  display: inline-block;
-}
-
 li {
   list-style: none;
 }
