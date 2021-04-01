@@ -1,9 +1,20 @@
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+    
+console.log(response.data);
 
-  let h3 = document.querySelector("h3");
-  h3.innerHTML = `${temperature}°C`;
+let temperature = Math.round(response.data.main.temp);
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = `${temperature}`;
+
+  let wind = Math.round(response.data.wind.speed);
+let windElement = document.querySelector("#wind")
+windElement.innerHTML = `${wind}`;
+
+let description = response.data.weather.description;
+let descriptionElement = document.querySelector("#description");
+descriptionElement.innerHTML = `${description}`;
 }
+
 
 function search(event) {
   event.preventDefault();
@@ -59,28 +70,3 @@ h2.innerHTML = `${hour}:${minute} | ${day}, ${month} ${date}, ${year}`;
 //Get your GPS coordinates
 //display the city
 // current temperature
-function showGps(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiKey = "a6dd1b72720a6b8569eb4aedde277ef9";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  console.log(position.coords);
-
-  let city = position.name;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${city}`;
-
-  let temperature = Math.round(response.data.main.temp);
-  let h3 = document.querySelector("h3");
-  h3.innerHTML = `${temperature}°C`;
-
-  axios.get(apiUrl).then(showGps);
-}
-
-function showPosition(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showGps);
-}
-
-let button = document.querySelector("button");
-button.addEventListener("click", showPosition);
