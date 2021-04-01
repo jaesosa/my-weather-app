@@ -52,18 +52,20 @@ i {
 #search-text-input {
   border-radius: 5px;
   border-color: #fff;
-  display: block;
+  display: inline-block;
   font-size: 18px;
-  margin: 20px auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
   padding: 10px;
 }
 
 .btn-secondary {
   box-sizing: border-box;
-  display: block;
+  display: inline-block;
   font-size: 20px;
-  margin: 20px auto;
-  padding: 10px auto;
+  height: 50px;
+  margin: 0 auto;
+  padding: 15px 20px auto;
 }
 
 .btn-light {
