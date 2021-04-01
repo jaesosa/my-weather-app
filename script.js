@@ -1,7 +1,4 @@
 function showTemperature(response) {
-    
-console.log(response.data);
-
 let temperature = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = `${temperature}`;
@@ -10,11 +7,10 @@ let temperature = Math.round(response.data.main.temp);
 let windElement = document.querySelector("#wind")
 windElement.innerHTML = `${wind}`;
 
-let description = response.data.weather.description;
+let description = response.data.weather[0].description;
 let descriptionElement = document.querySelector("#description");
 descriptionElement.innerHTML = `${description}`;
 }
-
 
 function search(event) {
   event.preventDefault();
@@ -66,7 +62,3 @@ let month = months[now.getMonth()];
 
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${hour}:${minute} | ${day}, ${month} ${date}, ${year}`;
-
-//Get your GPS coordinates
-//display the city
-// current temperature
