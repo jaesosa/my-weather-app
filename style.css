@@ -22,12 +22,6 @@ h2 {
   text-align: right;
 }
 
-h3 {
-  color: #445461;
-  font-size: 80px;
-  text-align: center;
-}
-
 ul {
   display: block;
   margin: 0 auto;
@@ -40,18 +34,18 @@ li {
   text-transform: capitalize;
 }
 
-i {
-  font-size: 80px;
-  color: #325c93;
-  opacity: 60%;
-}
-
 #celsius {
   font-size: 25px;
 }
 
 #fahrenheit {
   font-size: 25px;
+}
+
+#temperature {
+  color: #445461;
+  font-size: 85px;
+  text-align: left;
 }
 
 #search-text-input {
@@ -101,5 +95,17 @@ i {
 
 .credit {
   color: #445461;
+  text-align: center;
+}
+
+.icon {
+  font-size: 80px;
+  color: #325c93;
+  opacity: 60%;
+}
+
+.weather-icon {
+  color: #ffe167;
+  font-size: 100px;
   text-align: center;
 }

@@ -1,7 +1,7 @@
 function showTemperature(response) {
 let temperature = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = `${temperature}`;
+  tempElement.innerHTML = `${temperature}°`;
 
   let wind = Math.round(response.data.wind.speed);
 let windElement = document.querySelector("#wind")
