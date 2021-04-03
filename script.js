@@ -14,7 +14,7 @@ descriptionElement.innerHTML = `${description}`;
 let iconElement = document.querySelector("#weather-icon")
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
-
+celsiusTemp = response.data.main.temp;
 }
 
 function search(event) {
@@ -67,3 +67,28 @@ let month = months[now.getMonth()];
 
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${hour}:${minute} | ${day}, ${month} ${date}, ${year}`;
+
+let celsiusTemp = null;
+
+function conversion(event) {
+    event.preventDefault();
+let temperatureElement = document.querySelector("#temperature");
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
+let fahrenheitTemp = (celsiusTemp *9) /5 + 32;
+temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°`;
+}
+
+function reversion(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = `${Math.round(celsiusTemp)}°`;
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", conversion);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", reversion);
