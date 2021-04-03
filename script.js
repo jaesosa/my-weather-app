@@ -1,15 +1,20 @@
 function showTemperature(response) {
 let temperature = Math.round(response.data.main.temp);
-  let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = `${temperature}°`;
+let tempElement = document.querySelector("#temperature");
+tempElement.innerHTML = `${temperature}°`;
 
-  let wind = Math.round(response.data.wind.speed);
+let wind = Math.round(response.data.wind.speed);
 let windElement = document.querySelector("#wind")
 windElement.innerHTML = `${wind}`;
 
 let description = response.data.weather[0].description;
 let descriptionElement = document.querySelector("#description");
 descriptionElement.innerHTML = `${description}`;
+
+let iconElement = document.querySelector("#weather-icon")
+iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+
 }
 
 function search(event) {

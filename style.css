@@ -44,7 +44,7 @@ li {
 
 #temperature {
   color: #445461;
-  font-size: 85px;
+  font-size: 80px;
   text-align: left;
 }
 
@@ -56,6 +56,12 @@ li {
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 10px;
+}
+
+#weather-icon {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .btn-secondary {
@@ -102,10 +108,4 @@ li {
   font-size: 80px;
   color: #325c93;
   opacity: 60%;
-}
-
-.weather-icon {
-  color: #ffe167;
-  font-size: 100px;
-  text-align: center;
 }
