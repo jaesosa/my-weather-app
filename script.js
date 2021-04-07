@@ -1,3 +1,9 @@
+function getForecast(coordinates) {
+    let apiKey = "a6dd1b72720a6b8569eb4aedde277ef9";
+    let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(forecastUrl).then(showTemperature);
+}
+
 function showTemperature(response) {
 let temperature = Math.round(response.data.main.temp);
 let tempElement = document.querySelector("#temperature");
@@ -15,6 +21,7 @@ let iconElement = document.querySelector("#weather-icon")
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
 celsiusTemp = response.data.main.temp;
+getForecast(response.data.coord);
 }
 
 function search(event) {
@@ -92,3 +99,6 @@ fahrenheitLink.addEventListener("click", conversion);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", reversion);
+
+
+
