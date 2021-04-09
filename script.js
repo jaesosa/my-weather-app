@@ -25,26 +25,27 @@ getForecast(response.data.coord);
 }
 
 function showWeekForecast(response) {
-let apiKey = "a6dd1b72720a6b8569eb4aedde277ef9";  
-let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
-
-let days = (response.data.daily[0].dt);
-let dayElement = document.querySelector("#card-titles");
-dayElement.innerHTML = `${days}`;
+let dayElement = document.querySelector("h5");
+dayElement.innerHTML = formatDay(response.data.daily[0].dt * 1000);
 
 let maxTemp = Math.round(response.data.daily[0].temp.max);
-let maxElement = document.querySelector("#temp-max");
+let maxElement = document.querySelector(".temp-max");
 maxElement.innerHTML = `${maxTemp}°`;
 
 let minTemp = Math.round(response.data.daily[0].temp.min);
-let minElement = document.querySelector("#temp-min");
-minElement.innerHTML = `${minTemp}`;
+let minElement = document.querySelector(".temp-min");
+minElement.innerHTML = `${minTemp}°`;
 
-let iconElement = document.querySelector("#weather-pics");
-iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.daily[0].icon}@2x.png`);
+let iconElement = document.querySelector(".weather-pics");
+iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.daily[0].weather[0].icon}@2x.png`);
+}
 
-celsiusTemp = response.data.main.temp;
-getForecast(response.data.coord);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
 
 function search(event) {

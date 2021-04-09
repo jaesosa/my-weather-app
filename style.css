@@ -75,7 +75,7 @@ li {
 
 .card-title {
   color: #445461;
-  font-size: 25px;
+  font-size: 20px;
   margin: 10px auto;
   opacity: 0.8;
   text-align: center;
@@ -109,6 +109,13 @@ li {
   cursor: default;
   text-decoration: none;
 }
+
 .temperature-today .active:hover {
   text-decoration: none;
+}
+
+.weather-pics {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
 }
