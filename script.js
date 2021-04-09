@@ -1,7 +1,7 @@
 function getForecast(coordinates) {
     let apiKey = "a6dd1b72720a6b8569eb4aedde277ef9";
     let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-    axios.get(forecastUrl).then(showTemperature);
+    axios.get(forecastUrl).then(showWeekForecast);
 }
 
 function showTemperature(response) {
@@ -17,14 +17,16 @@ let description = response.data.weather[0].description;
 let descriptionElement = document.querySelector("#description");
 descriptionElement.innerHTML = `${description}`;
 
-let iconElement = document.querySelector("#weather-icon")
+let iconElement = document.querySelector("#weather-icon");
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
+celsiusTemp = response.data.main.temp;
+getForecast(response.data.coord);
 }
 
 function showWeekForecast(response) {
-let apiKey = "a6dd1b72720a6b8569eb4aedde277ef9";
-let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+let apiKey = "a6dd1b72720a6b8569eb4aedde277ef9";  
+let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
 
 let days = (response.data.daily[0].dt);
 let dayElement = document.querySelector("#card-titles");
