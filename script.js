@@ -38,6 +38,8 @@ minElement.innerHTML = `${minTemp}°`;
 
 let iconElement = document.querySelector(".weather-pics");
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.daily[0].weather[0].icon}@2x.png`);
+
+ days.forEach(showWeekForecast);
 }
 
 function formatDay(timestamp) {
