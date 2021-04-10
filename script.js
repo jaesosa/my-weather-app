@@ -61,18 +61,22 @@ function formatDay(timestamp) {
 }
 
 function search(city) {
-  let searchInput = document.querySelector("#search-text-input");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${searchInput.value}`;
-
   let apiKey = "a6dd1b72720a6b8569eb4aedde277ef9";
-  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=metric`;
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(weatherUrl).then(showTemperature);
 }
 
+function handleSubmit(event) {
+event.preventDefault();
+let searchInput = document.querySelector("#search-text-input");
+let h1 = document.querySelector("h1");
+h1.innerHTML = `${searchInput.value}`;
+search(searchInput.value);
+}
+
 let form = document.querySelector("form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 
 let now = new Date();
 let days = [
