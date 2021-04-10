@@ -73,23 +73,19 @@ li {
   padding: 15px 20px auto;
 }
 
-.card-title {
+.weather-forecast-day {
   color: #445461;
-  font-size: 20px;
-  margin: 10px auto;
-  opacity: 0.8;
+  font-size: 22px;
+  margin: 5px auto;
+  opacity: 0.9;
   text-align: center;
 }
 
-.card-text {
+.temperatures {
   color: #445461;
   font-size: 20px;
+  margin-top: 10px;
   text-align: center;
-}
-
-.card-body {
-  background-image: #fff;
-  border-radius: 20px auto;
 }
 
 .credit {
@@ -98,10 +94,12 @@ li {
   text-align: center;
 }
 
-.icon {
-  font-size: 80px;
-  color: #325c93;
-  opacity: 60%;
+.temp-max {
+  opacity: 0.9;
+}
+
+.temp-min {
+  opacity: 0.6;
 }
 
 .temperature-today .active {
@@ -117,5 +115,4 @@ li {
 .weather-pics {
   display: block;
   margin: 0 auto;
-  max-width: 50%;
 }
