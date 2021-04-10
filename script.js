@@ -5,7 +5,9 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
-let temperature = Math.round(fahrenheitTemp);
+  fahrenheitTemp = response.data.main.temp;
+
+  let temperature = Math.round(fahrenheitTemp);
 let tempElement = document.querySelector("#temperature");
 tempElement.innerHTML = `${temperature}°`;
 
@@ -20,7 +22,6 @@ descriptionElement.innerHTML = `${description}`;
 let iconElement = document.querySelector("#weather-icon");
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
-fahrenheitTemp = response.data.main.temp;
 getForecast(response.data.coord);
 }
 
@@ -119,7 +120,5 @@ let month = months[now.getMonth()];
 
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${hour}:${minute} | ${day}, ${month} ${date}, ${year}`;
-
-let fahrenheitTemp = null;
 
 search("New York");
