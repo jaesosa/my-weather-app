@@ -14,6 +14,7 @@ h1 {
   color: #445461;
   font-size: 60px;
   text-align: right;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -34,11 +35,7 @@ li {
   text-transform: capitalize;
 }
 
-#celsius {
-  font-size: 25px;
-}
-
-#fahrenheit {
+#unit {
   font-size: 25px;
 }
 
@@ -100,16 +97,6 @@ li {
 
 .temp-min {
   opacity: 0.6;
-}
-
-.temperature-today .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-
-.temperature-today .active:hover {
-  text-decoration: none;
 }
 
 .weather-pics {
